@@ -9,48 +9,48 @@ const About = () => {
   }, [])
   return (
     <>
-      <div className="m-[10px] py-2 px-8 ">
-        <h1 className="flex items-center justify-center text-3xl">About us</h1>
-        <p className="flex items-center justify-center py-2 px-8">
+      <div className="m-[10px] py-2 px-4 md:px-8">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl text-center">About us</h1>
+        <p className="py-2 text-center">
           GALACTECH is an innovative technology brand with operations in over 70
           countries and regions across five continents.
         </p>
-        <p className="flex items-center justify-center py-2 px-8">
+        <p className="py-2 text-center">
           Since its launch, GALACTECH has been revolutionizing the digital
           experience in emerging global markets, relentlessly pushing for the
           perfect integration of contemporary, aesthetic design with the latest
           technologies.
         </p>
-        <p className="flex items-center justify-center py-2 px-8">
+        <p className="py-2 text-center">
           Today, GALACTECH has developed into a recognized leader in its target
           markets, delivering state-of-the-art innovation through a wide range
           of smartphones, smart wearables, laptops and tablets, HiOS operating
           systems and smart home products.
         </p>
-        <p className="flex items-center justify-center py-2 px-8">
+        <p className="py-2 text-center">
           Guided by its brand essence of “Stop At Nothing”, GALACTECH is
           committed to unlocking the best and newest technologies for
           forward-looking individuals.
         </p>
-        <p className="flex items-center justify-center py-2 px-8">
+        <p className="py-2 text-center">
           By creating stylish, intelligent products, GALACTECH inspires
           consumers worldwide to never stop pursuing their best selves and their
           best futures.
         </p>
         <Link
           to={"/contact"}
-          className="flex items-center justify-center text-2xl m-[10px] cursor-pointer hover:scale-105 duration-300 py-2 px-8 text-primary"
+          className="block mx-auto text-2xl md:text-3xl lg:text-4xl py-2 px-6 md:px-8 text-center text-primary hover:scale-105 duration-300"
         >
           Contact Us
         </Link>
       </div>
 
-      <div className="antialiased justify-center items-center py-4 bg-white">
-        <h1 className="flex items-center justify-center m-[10px]  py-2 px-8 text-5xl text-black">
+      <div className="py-4 bg-white">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl text-center m-[10px] text-black">
           Brand Journey
         </h1>
-        <div className="h-screen w-full flex justify-center items-center  bg-white">
-          <div className=" max-w-7xl mx-auto w-full grid grid-cols-9 ">
+        <div className="w-full flex justify-center items-center bg-white overflow-x-auto">
+          <div className=" max-w-7xl mx-auto w-full grid grid-cols-9  justify-center items-center bg-white  ">
             {/* <--Stack 1--> */}
             <div className="col-span-4 w-full h-full">
               <div className="w-full h-full bg-primary rounded-md p-2 md:pl-4">
@@ -173,6 +173,7 @@ const About = () => {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -181,3 +182,9 @@ const About = () => {
 };
 
 export default About;
+
+
+
+
+
+

@@ -14,9 +14,15 @@ import About from "./components/Footer/Things/About";
 import Faq from "./components/Footer/Things/Faq";
 import Privacy from "./components/Footer/Things/Privacy";
 import Term from "./components/Footer/Things/Term";
+import Cart from "./components/Pages/Cart/Cart";
+import UserProfile from "./components/Pages/User/UserProfile";
+import SignIn from "./components/Login/SignIn";
+import SignUp from "./components/Login/SignUp";
+import ProductInfo from "./components/Hero/ProductInfo";
 
 
 const App = () => {
+  
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -32,8 +38,13 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Hero />} />
+            <Route path="/productinfo" element={<ProductInfo />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/user/:activepage" element={<UserProfile />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/about" element={<About/>} />

@@ -1,5 +1,6 @@
 import SingleBanner from "../../Banners/SingleBanner";
 import Img1 from "../../../assets/Terms/faq.jpg";
+import Img2 from "../../../assets/Faq/techno.png"
 import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa6";
@@ -71,48 +72,31 @@ const Faq = () => {
 
   const [active, setActive] = useState(0);
   return (
-    <div className=" bg-[#e3edf7] w-full flex flex-col">
+    <div className="relative w-full flex flex-col bg-white ">
       <SingleBanner bannerimage={Img1} />
-      <div className="w-60% self-center p-[60px] flex flex-col mt-[20px] mb-0">
-        {faq.map((item, index) => {
-          return active == item.id ? (
+      <div className="w-full max-w-2xl mx-auto p-4">
+        {faq.map((item, index) => (
+          <div key={index} className="mb-4 bg-cover bg-center rounded-lg shadow-md sm:bg-cover" style={{ backgroundImage: `url(${Img2})` }}>
             <div
-              key={index}
-              className="flex flex-col gap-[10px] p-[20px] bg-white shadow-extra rounded-[10px] mx-[10px] my-0"
+              className="flex items-center justify-between p-4 cursor-pointer"
+              onClick={() => setActive(active === item.id ? 0 : item.id)}
             >
-              {/* FAQ head */}
-              <div
-                className="flex items-center justify-between mx-[5px] my-0"              >
-                <h1 className="text-[20px] font-medium text-gray-500 p-0 tracking-[1px]">
-                  {item.question}
-                </h1>
-                <IoMdClose
-                  className="text-gray-500 w-[20px] h-[20px] cursor-pointer"
-                  onClick={() => setActive(0)}
-                />
-              </div>
-              {/* FAQ body */}
-              <div className=" text-gray-600 text-[15px]  p-0 tracking-[1px] m-0 font-semibold">
+              <h1 className="text-[20px] font-medium text-white tracking-[1px]">
+                {item.question}
+              </h1>
+              {active === item.id ? (
+                <IoMdClose className="text-white w-6 h-6" />
+              ) : (
+                <FaAngleDown className="text-white w-6 h-6" />
+              )}
+            </div>
+            {active === item.id && (
+              <div className="p-4 text-gray-300 font-semibold">
                 <p>{item.answer}</p>
               </div>
-            </div>
-          ) : (
-            <div className="flex flex-col gap-[10px] p-[20px] bg-white shadow-extra rounded-[10px] mx-[10px] my-0">
-              {/* FAQ head */}
-              <div className="flex items-center justify-between mx-[10px] my-0">
-                <h1 className="text-[20px] font-medium text-gray-500 p-0 tracking-[1px]">
-                  {item.question}
-                </h1>
-                <FaAngleDown
-                  className="text-gray-500 w-[20px] h-[20px] cursor-pointer"
-                  onClick={() => setActive(item.id)}
-                />
-              </div>
-            </div>
-          );
-        })}
-
-        {/* end */}
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

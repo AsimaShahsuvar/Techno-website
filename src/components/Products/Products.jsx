@@ -72,7 +72,6 @@ const Products = () => {
         <Heading title="Our Products" subtitle="Explore Our Products" />
         {/* Body section */}
         <ProductCard data={ProductsData} />
-        <ProductCard data={ProductsData2} />
       </div>
     </div>
   );

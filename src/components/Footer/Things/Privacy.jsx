@@ -1,29 +1,24 @@
 import { useEffect } from "react";
 import Img1 from "../../../assets/Terms/Future.jpg";
-
 import SingleBanner from "../../Banners/SingleBanner";
 
-// const PrivacyData = [
-//   {
-//     id: 1,
-//     img: Img1,
-//   },
-// ];
 const Privacy = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-
   }, []);
+
   return (
     <div className="w-full flex flex-col">
       <SingleBanner heading="Privacy Policy" bannerimage={Img1} />
-      <div className="flex flex-col justify-center w-4/5 self-center p-[40px]">
-        <h3 className="text-4xl font-medium text-gray-500 mb-[10px] p-0 tracking-normal flex justify-between text-center">
-          Terms of Use
-          <p className="text-2xl">Last updated April , 2024</p>
+      <div className="flex flex-col justify-center w-full sm:w-4/5 self-center p-4 sm:p-8 lg:p-12 xl:p-16">
+        <h3 className="text-3xl sm:text-4xl font-medium text-gray-500 mb-2 sm:mb-4 p-0 tracking-normal flex justify-between text-center">
+          Privacy Policy
+          <p className="text-xl sm:text-xl text-gray-600">Last updated April , 2024</p>
         </h3>
-        <p className="text-lg text-gray-400">Welcome to <span className="text-secondary">GALACTECH</span></p>
-        <p className="text-lg text-gray-400">
+        <p className="text-lg sm:text-xl text-gray-400">
+          Welcome to <span className="text-secondary">GALACTECH</span>
+        </p>
+        <p className="text-lg sm:text-xl text-gray-400">
           GALACTECH MOBILE LIMITED and its global affiliates (global affiliates
           are companies related to GALACTECH MOBILE LIMITED by common ownership
           or control, collectively referred to as "GALACTECH", "we", "us",
@@ -53,15 +48,15 @@ const Privacy = () => {
           specific privacy policy of the particular GALACTECH product or service
           shall be subject to the content of this Policy.
         </p>
-        <p className="text-lg text-gray-400">1. Acceptance of this Agreement</p>
-        <p className="text-lg text-gray-400">
+        <p className="text-lg sm:text-xl text-gray-400">1. Acceptance of this Agreement</p>
+        <p className="text-lg sm:text-xl text-gray-400">
           1.1 By downloading, installing, clicking on the "register" or "agree"
           button and/or accessing or using the GALACTECH Device, Software or
           Service, you agree to comply with and be bound by this Agreement. If
           you do not agree to this Agreement, you may not access or use
           GALACTECH Software or Service.
         </p>
-        <p className="text-lg text-gray-400">
+        <p className="text-lg sm:text-xl text-gray-400">
           1.2 The GALACTECH Software and Service are not intended for or
           directed to children under the age of 14 (or the age considered as a
           "child" in the jurisdiction where you use GALACTECH Software or
@@ -83,10 +78,10 @@ const Privacy = () => {
           and (v) assume responsibility and are bound by this Agreement for the
           Minor’s access and use of the GALACTECH Software and Service.
         </p>
-        <h3 className="text-2xl font-medium text-gray-500 mb-[10px] p-0 tracking-normal ">
+        <h3 className="text-xl sm:text-2xl font-medium text-gray-500 mb-2 sm:mb-4 p-0 tracking-normal text-center">
           How to Contact Us
         </h3>
-        <p className="text-lg text-gray-400">
+        <p className="text-lg sm:text-xl text-gray-400 text-center">
           If you have any comments, questions or concerns with respect to our
           Privacy Policy or practices of personal information protection, please
           contact us via: <span className="text-gray-600 cursor-pointer">Email: privacy@mail.com </span>(Note: This mailbox is

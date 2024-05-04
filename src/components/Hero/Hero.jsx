@@ -42,7 +42,8 @@ const Hero = () => {
     infinite: true,
     speed: 800,
     slidesToScroll: 1,
-    autoplayspeed: 4000,
+    autoplay: true, // Add autoplay option
+    autoplaySpeed: 4000, // Set autoplay speed (time in milliseconds)
     cssEase: "ease-in-out",
     pauseOnHover: false,
     pauseOnFocus: true,

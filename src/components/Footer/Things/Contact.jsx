@@ -1,83 +1,60 @@
-// import { useState } from "react";
-
 import { useEffect, useRef } from "react";
-import Img1 from "../../../assets/blogs/AI-future.jpg"
-import SingleBanner from "../../Banners/SingleBanner";
+import Img1 from "../../../assets/blogs/AI-techno.png";
 
 const Contact = () => {
   useEffect(() => {
-    window.scrollTo(0,0)
-  
+    window.scrollTo(0, 0);
     return () => {
-    }
-  }, [])
+      // Cleanup if needed
+    };
+  }, []);
 
-//   const [data, setData] = useState({ name: "name", email: "email@.com", message: "text" });
-const form = useRef()
+  const form = useRef();
+
   const handleSubmit = (e) => {
-    e.prevent.default();
+    e.preventDefault();
     alert("Data sent");
   };
 
-  
-//   const handleTextChange = (e) => {
-//     setData((prev) => ({
-//       ...prev,
-//       [e.target.name]: e.target.value,
-//     }));
-//   };
   return (
-    <>
-
-    <SingleBanner bannerimage={Img1}/>
-      {/* <img src={Img1} alt="" /> */}
-      <h1 className="text-3xl font-bold">Contact Us</h1>
-      <form ref={form} onSubmit={handleSubmit}>
-
-        <div  className="flex flex-col w-[300px] bg-my-image">
-          <label 
-          className="m-[2px] p-[2px]"
-          htmlFor="name">FullName :</label>
-          <input
-            className="outline-none text-gray-600 cursor-pointer hover:scale-105 duration-300 m-[10px] py-[4px] px-[4px] rounded-[8px]"
-            type={"text"}
-            name="name"
-            // value={data.name}
-            autoComplete="off"
-            placeholder="Fullname"
-            // onChange={handleTextChange}
-          />
-          <label 
-          className="m-[2px] p-[2px]"
-          htmlFor="email">Email Adrress :</label>
-          <input
-            className="outline-none text-gray-600 cursor-pointer hover:scale-105 duration-300 m-[10px] py-[4px] px-[4px] rounded-[8px]"
-            type={"email"}
-            name="email"
-            placeholder="Email"
-            // value={data.email}
-            // onChange={handleTextChange}
-          />
-          <label 
-          className="m-[2px] p-[2px]"
-          htmlFor="message">Text :</label>
-          <textarea
-            className="outline-none text-gray-600 cursor-pointer hover:scale-105 duration-300 m-[10px] py-[2px] px-[2px] rounded-[8px]"
-            type={"message"}
-            name="message"
-            placeholder="Message"
-            // value={data.message}
-            // onChange={handleTextChange}
-          />
-        </div>
-        <button 
-        type="submit"
-        className="m-[10px] cursor-pointer hover:scale-105 duration-300 py-2 px-8 bg-primary rounded-[10px]">
-          Send
-        </button>
-      </form>
-
-    </>
+    <div className="bg-cover bg-center bg-no-repeat min-h-screen relative">
+      <img src={Img1} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto py-[10px] bg-black rounded-lg shadow-lg p-8">
+        <h1 className="text-3xl font-bold mb-6 text-white">Contact Us</h1>
+        <form ref={form} onSubmit={handleSubmit} className="max-w-md mx-auto">
+          <div className="flex flex-col">
+            <label className="mb-2 text-white" htmlFor="name">Full Name:</label>
+            <input
+              className="mb-4 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-primary"
+              type="text"
+              name="name"
+              autoComplete="off"
+              placeholder="Full Name"
+            />
+            <label className="mb-2 text-white" htmlFor="email">Email Address:</label>
+            <input
+              className="mb-4 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-primary"
+              type="email"
+              name="email"
+              placeholder="Email Address"
+            />
+            <label className="mb-2 text-white" htmlFor="message">Message:</label>
+            <textarea
+              className="mb-4 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-primary"
+              type="message"
+              name="message"
+              placeholder="Message"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark transition duration-300"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 

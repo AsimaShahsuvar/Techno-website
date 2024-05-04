@@ -1,11 +1,29 @@
-// import { useContext } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdSearch } from "react-icons/io";
-// import { useNavigate } from "react-router-dom";
-
+import { supabase } from "../supabase/SupabaseConfig";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [search]); // Trigger fetchProducts whenever search changes
+
+  const fetchProducts = async () => {
+    try {
+      let { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .ilike("name", `%${search}%`); // Use ilike to perform case-insensitive search
+      if (error) {
+        throw error;
+      }
+      setProducts(data);
+    } catch (error) {
+      console.error("Error fetching products:", error.message);
+    }
+  };
 
   return (
     <div className="flex justify-between items-center gap-4">
@@ -14,6 +32,7 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Search"
+          value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="search-bar"
         />
